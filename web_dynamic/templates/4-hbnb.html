@@ -8,14 +8,12 @@
     <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?{{ cache_id }}">
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
     <link rel="icon" href="../static/images/icon.png" />
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="/static/scripts/4-hbnb.js?{{ cache_id }}"></script>
     <title>HBnB</title>
   </head>
   <body>
     <header>
-      <div class="logo"></div>
-      <div id="api_status"></div>
+      <div class="logo">
+		<div id="api_status" class="available"></div>
     </header>
     <div class="container">
       <section class="filters">
@@ -24,16 +22,13 @@
 	  <h4>&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
-	      {% for state in states %}
 	      <li>
-		<h2>{{ state[0].name }}:</h2>
+		<h2>California:</h2>
 		<ul>
-		  {% for city in state[1] %}
-		  <li>{{ city.name }}</li>
-		  {% endfor %}
+		  <li>San Francisco</li>
+		  <li>Mountain View</li>
 		</ul>
 	      </li>
-	      {% endfor %}
 	    </ul>
 	  </div>
 	</div>
@@ -42,20 +37,93 @@
 	  <h4>&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
-	      {% for amenity in amenities %}
-	      <li> <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
-		{{ amenity.name }}
-	      </li>
-	      {% endfor %}
+	      <li><input type="checkbox" data-id="1" data-name="Wifi">Wifi</li>
+		  <li><input type="checkbox" data-id="2" data-name="Cable Tv">Cable Tv</li>
+		  <li><input type="checkbox" data-id="3" data-name="Shampoo">Shampoo</li>
+		  <li><input type="checkbox" data-id="4" data-name="Heating">Heating</li>
+		  <li><input type="checkbox" data-id="5" data-name="Kitchen">Kitchen</li>
+		  <li><input type="checkbox" data-id="6" data-name="Internet">Internet</li>
+		  <li><input type="checkbox" data-id="7" data-name="Family/kid friendly">Family/kid friendly</li>
+		  <li><input type="checkbox" data-id="8" data-name="Smoking allowed">Smoking allowed</li>
+		  <li><input type="checkbox" data-id="9" data-name="Pets allowed">Pets allowed</li>
 	    </ul>
 	  </div>
 	</div>
-	<button type="button" onclick="searchPlacesAmenities()">Search</button>
+	<button type="button">Search</button>
       </section>
-      <div class="placesh1"><h1>Places</h1></div>
       <section class="places">
-	<!-- <h1>Places</h1> -->
+	<h1>Places</h1>
+	<article>
+	  <div class="title_box">
+	    <h2>#Beatiful Studio in Waikiki</h2>
+	    <div class="price_by_night">
+			$119
+		</div>
+	  </div>
+	  <div class="information">
+	    <div class="max_guest">
+	      <div class="guest_image">
+	      </div>
+	      2 Guests
+	    </div>
+	    <div class="number_rooms">
+	      <div class="bed_image">
+	      </div>
+	      0 Bedroom
+	    </div>
+	    <div class="number_bathrooms">
+	      <div class="bath_image">
+	      </div>
+	      0 Bathroom
+	    </div>
+	  <div class="information">
+	    
+	  <div class="user">
+            <b>Owner: Michael Duarte</b>
+
+          </div>
+          <div class="description">
+			<b>Description</b>
+          </div>
+	</div>
+	</article>
       </section>
+	  <section class="places">
+		<h1>Places</h1>
+		<article>
+		  <div class="title_box">
+			<h2>#Private Studio - Waikiki Dream</h2>
+			<div class="price_by_night">
+				$119
+			</div>
+		  </div>
+		  <div class="information">
+			<div class="max_guest">
+			  <div class="guest_image">
+			  </div>
+			  2 Guests
+			</div>
+			<div class="number_rooms">
+			  <div class="bed_image">
+			  </div>
+			  0 Bedroom
+			</div>
+			<div class="number_bathrooms">
+			  <div class="bath_image">
+			  </div>
+			  0 Bathroom
+			</div>
+		  <div class="information">
+			
+		  <div class="user">
+				<b>Owner:</b>
+			  </div>
+			  <div class="description">
+				<b>Description</b>
+			  </div>
+		</div>
+		</article>
+		  </section>
     </div>
     <footer>
       <p>Holberton School</p>
