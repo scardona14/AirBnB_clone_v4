@@ -12,7 +12,8 @@
   </head>
   <body>
     <header>
-      <div class="logo"></div>
+      <div class="logo">
+	  </div>
     </header>
     <div class="container">
       <section class="filters">
@@ -21,16 +22,13 @@
 	  <h4>&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
-	      {% for state in states %}
 	      <li>
-		<h2>{{ state[0].name }}:</h2>
+		<h2>California:</h2>
 		<ul>
-		  {% for city in state[1] %}
-		  <li>{{ city.name }}</li>
-		  {% endfor %}
+		  <li>San Francisco</li>
+		  <li>Mountain View</li>
 		</ul>
 	      </li>
-	      {% endfor %}
 	    </ul>
 	  </div>
 	</div>
@@ -39,9 +37,15 @@
 	  <h4>&nbsp;</h4>
 	  <div class="popover">
 	    <ul>
-	      {% for amenity in amenities %}
-	      <li>{{ amenity.name }}</li>
-	      {% endfor %}
+	      <li><input type="checkbox" data-id="1" data-name="Wifi">Wifi</li>
+		  <li><input type="checkbox" data-id="2" data-name="Cable Tv">Cable Tv</li>
+		  <li><input type="checkbox" data-id="3" data-name="Shampoo">Shampoo</li>
+		  <li><input type="checkbox" data-id="4" data-name="Heating">Heating</li>
+		  <li><input type="checkbox" data-id="5" data-name="Kitchen">Kitchen</li>
+		  <li><input type="checkbox" data-id="6" data-name="Internet">Internet</li>
+		  <li><input type="checkbox" data-id="7" data-name="Family/kid friendly">Family/kid friendly</li>
+		  <li><input type="checkbox" data-id="8" data-name="Smoking allowed">Smoking allowed</li>
+		  <li><input type="checkbox" data-id="9" data-name="Pets allowed">Pets allowed</li>
 	    </ul>
 	  </div>
 	</div>
@@ -49,26 +53,22 @@
       </section>
       <div class="placesh1"><h1>Places</h1></div>
       <section class="places">
-	<!-- <h1>Places</h1> -->
-	{% for place in places %}
+	<h1>Places</h1>
 	<article>
 	  <div class="title_box">
-	    <h2>{{ place.name }}</h2>
-	    <div class="price_by_night">${{ place.price_by_night }}</div>
+	    <h2>My home</h2>
+	    <div class="price_by_night"></div>
 	  </div>
 	  <div class="information">
-	    <div class="max_guest">{{ place.max_guest }} Guest{% if place.max_guest != 1 %}s{% endif %}</div>
-            <div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
-            <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
-	  </div>
+	    
 	  <div class="user">
-            <b>Owner:</b> {{ place.user.first_name }} {{ place.user.last_name }}
+            <b>Owner:</b>
           </div>
           <div class="description">
-	    {{ place.description | safe }}
+			<b>Description:</b>
           </div>
+	</div>
 	</article>
-	{% endfor %}
       </section>
     </div>
     <footer>
