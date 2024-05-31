@@ -63,3 +63,4 @@ $(function () {
     console.log('Search button clicked');
     loadAndDisplayPlaces(); // Load and display places based on selected amenities
   });
+  
